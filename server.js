@@ -27,6 +27,9 @@ app.get("/feedback", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/pages/feedback.html"))
 );
 
+//GET Route for 404 Error
+app.get("*", (req, res) => res.json("404: Page not found!"));
+
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
